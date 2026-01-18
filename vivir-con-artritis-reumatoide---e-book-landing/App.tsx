@@ -5,6 +5,8 @@ import Hero from './components/Hero';
 import FeatureSection from './components/FeatureSection';
 import GallerySection from './components/GallerySection';
 import VideoSection from './components/VideoSection';
+import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import PreviewModal from './components/PreviewModal';
@@ -20,6 +22,8 @@ const App: React.FC = () => {
         <FeatureSection />
         <GallerySection />
         <VideoSection />
+        <Testimonials />
+        <FAQ />
         <Newsletter />
       </main>
       <Footer />
