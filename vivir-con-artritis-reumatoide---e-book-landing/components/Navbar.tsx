@@ -1,63 +1,81 @@
-
-import React, { useState } from 'react';
-import { Menu, X, BookOpen } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Menu, X, BookOpen, ShoppingCart } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 sm:h-24">
-          <div className="flex items-center gap-3 max-w-[70%] sm:max-w-md">
-            <BookOpen className="text-emerald-600 w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
-            <span className="text-xs sm:text-base md:text-lg font-bold tracking-tight text-stone-800 leading-tight line-clamp-2 sm:line-clamp-none">
-              Vivir con Artritis Reumatoide: Recetas y Consejos Saludables
-            </span>
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <div className="bg-emerald-600 p-2 rounded-xl shadow-lg">
+              <BookOpen className="text-white w-6 h-6" />
+            </div>
+            <div className="flex flex-col">
+              <span className={`text-lg font-bold leading-none tracking-tight ${scrolled ? 'text-stone-900' : 'text-white'}`}>
+                Artritis Reumatoide
+              </span>
+              <span className={`text-[10px] uppercase tracking-widest font-bold ${scrolled ? 'text-emerald-600' : 'text-emerald-400'}`}>
+                Vida & Salud
+              </span>
+            </div>
           </div>
 
-          <div className="hidden lg:flex items-center space-x-8">
-            <a href="#inicio" className="text-stone-600 hover:text-emerald-600 transition-colors font-medium">Inicio</a>
-            <a href="#contenido" className="text-stone-600 hover:text-emerald-600 transition-colors font-medium">El E-book</a>
-            <a href="#recetas" className="text-stone-600 hover:text-emerald-600 transition-colors font-medium">Recetas</a>
-            <a href="#consejos" className="text-stone-600 hover:text-emerald-600 transition-colors font-medium">Consejos</a>
+          <div className="hidden lg:flex items-center">
             <a 
               href="https://go.hotmart.com/F103807521Y" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-emerald-600 text-white px-6 py-2.5 rounded-full font-bold hover:bg-emerald-700 transition-all shadow-md inline-block whitespace-nowrap hover:scale-105 active:scale-95"
+              className="flex items-center gap-2 bg-emerald-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-emerald-500 transition-all shadow-xl hover:scale-105 active:scale-95"
             >
-              Comprar Ahora
+              <ShoppingCart size={18} /> Comprar E-book
             </a>
           </div>
 
           <div className="lg:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-stone-800 p-2">
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className={`p-2 rounded-xl transition-colors ${scrolled ? 'text-stone-900 hover:bg-stone-100' : 'text-white hover:bg-white/10'}`}
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="lg:hidden bg-white border-b border-stone-200 animate-fade-up">
-          <div className="px-4 pt-2 pb-6 space-y-4">
-            <a href="#inicio" onClick={() => setIsOpen(false)} className="block text-lg font-medium text-stone-800 border-b border-stone-50 py-2">Inicio</a>
-            <a href="#contenido" onClick={() => setIsOpen(false)} className="block text-lg font-medium text-stone-800 border-b border-stone-50 py-2">El E-book</a>
-            <a href="#recetas" onClick={() => setIsOpen(false)} className="block text-lg font-medium text-stone-800 border-b border-stone-50 py-2">Recetas</a>
-            <a href="#consejos" onClick={() => setIsOpen(false)} className="block text-lg font-medium text-stone-800 border-b border-stone-50 py-2">Consejos</a>
+      <div className={`lg:hidden fixed inset-0 z-40 bg-stone-900 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col h-full p-8 pt-24">
+          <button onClick={() => setIsOpen(false)} className="absolute top-8 right-8 text-white">
+            <X size={32} />
+          </button>
+          <div className="flex flex-col items-center justify-center flex-1 text-center">
+             <div className="bg-emerald-600 p-4 rounded-2xl shadow-lg mb-6">
+              <BookOpen className="text-white w-12 h-12" />
+            </div>
+            <h2 className="text-white text-3xl font-bold mb-2 serif">Vivir sin Artritis</h2>
+            <p className="text-emerald-400 text-sm uppercase tracking-widest font-bold mb-12">Recetas y Consejos Saludables</p>
+          </div>
+          <div className="mt-auto">
             <a 
               href="https://go.hotmart.com/F103807521Y" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full bg-emerald-600 text-white px-6 py-4 rounded-xl font-bold text-center block shadow-lg mt-4"
+              className="w-full bg-emerald-600 text-white px-6 py-5 rounded-2xl font-bold text-xl text-center block shadow-2xl"
             >
-              Comprar Ahora
+              Comprar E-book Ahora
             </a>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

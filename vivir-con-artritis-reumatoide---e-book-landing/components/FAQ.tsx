@@ -25,12 +25,12 @@ const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-white">
+    <section id="faq" className="py-24 bg-white scroll-mt-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center text-stone-800 mb-12 serif">Preguntas Frecuentes</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="border border-stone-200 rounded-2xl overflow-hidden">
+            <div key={i} className="border border-stone-200 rounded-2xl overflow-hidden shadow-sm">
               <button 
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex justify-between items-center p-6 text-left hover:bg-stone-50 transition-colors"
@@ -39,7 +39,7 @@ const FAQ: React.FC = () => {
                 {openIndex === i ? <ChevronUp size={20} className="text-emerald-600" /> : <ChevronDown size={20} className="text-stone-400" />}
               </button>
               {openIndex === i && (
-                <div className="p-6 pt-0 text-stone-600 leading-relaxed bg-stone-50/50">
+                <div className="p-6 pt-0 text-stone-600 leading-relaxed bg-stone-50/50 animate-fade-up">
                   {faq.a}
                 </div>
               )}

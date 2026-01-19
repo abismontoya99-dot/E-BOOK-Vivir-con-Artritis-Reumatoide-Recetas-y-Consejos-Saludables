@@ -1,15 +1,15 @@
 
 import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import FeatureSection from './components/FeatureSection';
-import GallerySection from './components/GallerySection';
-import VideoSection from './components/VideoSection';
-import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
-import Newsletter from './components/Newsletter';
-import Footer from './components/Footer';
-import PreviewModal from './components/PreviewModal';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import FeatureSection from './components/FeatureSection.tsx';
+import GallerySection from './components/GallerySection.tsx';
+import VideoSection from './components/VideoSection.tsx';
+import Testimonials from './components/Testimonials.tsx';
+import FAQ from './components/FAQ.tsx';
+import Newsletter from './components/Newsletter.tsx';
+import Footer from './components/Footer.tsx';
+import PreviewModal from './components/PreviewModal.tsx';
 
 const App: React.FC = () => {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
