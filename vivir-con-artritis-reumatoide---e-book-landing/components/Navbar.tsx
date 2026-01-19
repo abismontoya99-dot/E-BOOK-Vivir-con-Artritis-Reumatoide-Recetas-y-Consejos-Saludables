@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, BookOpen, ShoppingCart } from 'lucide-react';
+import { BookOpen, ShoppingCart } from 'lucide-react';
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -29,49 +28,14 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          <div className="hidden lg:flex items-center">
+          <div className="flex items-center">
             <a 
               href="https://go.hotmart.com/F103807521Y" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-emerald-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-emerald-500 transition-all shadow-xl hover:scale-105 active:scale-95"
+              className="flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 md:px-8 md:py-3 rounded-xl font-bold hover:bg-emerald-500 transition-all shadow-xl hover:scale-105 active:scale-95 text-sm md:text-base"
             >
-              <ShoppingCart size={18} /> Comprar E-book
-            </a>
-          </div>
-
-          <div className="lg:hidden">
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
-              className={`p-2 rounded-xl transition-colors ${scrolled ? 'text-stone-900 hover:bg-stone-100' : 'text-white hover:bg-white/10'}`}
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-0 z-40 bg-stone-900 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col h-full p-8 pt-24">
-          <button onClick={() => setIsOpen(false)} className="absolute top-8 right-8 text-white">
-            <X size={32} />
-          </button>
-          <div className="flex flex-col items-center justify-center flex-1 text-center">
-             <div className="bg-emerald-600 p-4 rounded-2xl shadow-lg mb-6">
-              <BookOpen className="text-white w-12 h-12" />
-            </div>
-            <h2 className="text-white text-3xl font-bold mb-2 serif">Vivir sin Artritis</h2>
-            <p className="text-emerald-400 text-sm uppercase tracking-widest font-bold mb-12">Recetas y Consejos Saludables</p>
-          </div>
-          <div className="mt-auto">
-            <a 
-              href="https://go.hotmart.com/F103807521Y" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full bg-emerald-600 text-white px-6 py-5 rounded-2xl font-bold text-xl text-center block shadow-2xl"
-            >
-              Comprar E-book Ahora
+              <ShoppingCart size={18} className="hidden md:block" /> Comprar E-book
             </a>
           </div>
         </div>

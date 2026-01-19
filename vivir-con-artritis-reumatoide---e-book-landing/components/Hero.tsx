@@ -20,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenPreview }) => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
         <div className="max-w-3xl animate-fade-up">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-[1.1] serif text-white drop-shadow-xl">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-[1.1] serif text-white drop-shadow-2xl">
             Vivir <span className="italic text-emerald-400">sin</span> <br />
             Artritis
           </h1>
