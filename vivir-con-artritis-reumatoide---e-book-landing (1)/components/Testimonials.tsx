@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star } from 'lucide-react';
 
@@ -34,15 +33,15 @@ const Testimonials: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-stone-100 hover:shadow-md transition-shadow">
-              <div className="flex gap-1 text-emerald-500 mb-6">
+              <div className="flex gap-1 text-purple-400 mb-6">
                 {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
               </div>
               <p className="text-stone-700 mb-8 italic leading-relaxed">"{t.content}"</p>
               <div className="flex items-center gap-4">
-                <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
+                <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full object-cover border border-purple-100" />
                 <div>
                   <h4 className="font-bold text-stone-900">{t.name}</h4>
-                  <p className="text-xs text-emerald-600 font-semibold uppercase">{t.role}</p>
+                  <p className="text-xs text-[#420b58] font-semibold uppercase">{t.role}</p>
                 </div>
               </div>
             </div>
