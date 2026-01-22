@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BookOpen, Instagram, Facebook, Mail } from 'lucide-react';
 
@@ -9,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-12 border-b border-stone-800 pb-12">
           <div className="col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <BookOpen className="text-emerald-500 w-8 h-8 shrink-0" />
+              <BookOpen className="text-purple-400 w-8 h-8 shrink-0" />
               <span className="text-xl md:text-2xl font-bold tracking-tight text-white leading-tight">
                 Vivir con Artritis Reumatoide: Recetas y Consejos Saludables
               </span>
@@ -22,23 +21,23 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-6 text-lg uppercase tracking-widest text-sm">Explora</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Sobre el autor</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Recetas destacadas</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Blog de bienestar</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Términos y Condiciones</a></li>
+              <li><a href="#" className="hover:text-purple-400 transition-colors">Sobre el autor</a></li>
+              <li><a href="#" className="hover:text-purple-400 transition-colors">Recetas destacadas</a></li>
+              <li><a href="#" className="hover:text-purple-400 transition-colors">Blog de bienestar</a></li>
+              <li><a href="#" className="hover:text-purple-400 transition-colors">Términos y Condiciones</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6 text-lg uppercase tracking-widest text-sm">Conecta</h4>
             <div className="flex gap-4 mb-6">
-              <a href="#" className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-emerald-600 transition-all text-white">
+              <a href="#" className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-[#420b58] transition-all text-white">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-emerald-600 transition-all text-white">
+              <a href="#" className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-[#420b58] transition-all text-white">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-emerald-600 transition-all text-white">
+              <a href="#" className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-[#420b58] transition-all text-white">
                 <Mail size={20} />
               </a>
             </div>

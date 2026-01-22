@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -26,8 +25,10 @@ const FAQ: React.FC = () => {
 
   return (
     <section id="faq" className="py-24 bg-white scroll-mt-24">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-stone-800 mb-12 serif">Preguntas Frecuentes</h2>
+      <div className="max-w-3xl auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-center text-stone-800 mb-12 serif">
+          Preguntas <span className="text-gradient expressive">Frecuentes</span>
+        </h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
             <div key={i} className="border border-stone-200 rounded-2xl overflow-hidden shadow-sm">
@@ -36,7 +37,7 @@ const FAQ: React.FC = () => {
                 className="w-full flex justify-between items-center p-6 text-left hover:bg-stone-50 transition-colors"
               >
                 <span className="font-bold text-stone-800">{faq.q}</span>
-                {openIndex === i ? <ChevronUp size={20} className="text-emerald-600" /> : <ChevronDown size={20} className="text-stone-400" />}
+                {openIndex === i ? <ChevronUp size={20} className="text-purple-600" /> : <ChevronDown size={20} className="text-stone-400" />}
               </button>
               {openIndex === i && (
                 <div className="p-6 pt-0 text-stone-600 leading-relaxed bg-stone-50/50 animate-fade-up">

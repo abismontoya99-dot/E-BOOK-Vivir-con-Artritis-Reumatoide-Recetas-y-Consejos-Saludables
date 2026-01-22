@@ -1,11 +1,13 @@
-
 import React, { useState } from 'react';
 import Navbar from './components/Navbar.tsx';
 import Hero from './components/Hero.tsx';
+import AuthorSection from './components/AuthorSection.tsx';
+import BenefitSection from './components/BenefitSection.tsx';
 import FeatureSection from './components/FeatureSection.tsx';
 import GallerySection from './components/GallerySection.tsx';
 import VideoSection from './components/VideoSection.tsx';
 import Testimonials from './components/Testimonials.tsx';
+import PurchaseCTA from './components/PurchaseCTA.tsx';
 import FAQ from './components/FAQ.tsx';
 import Newsletter from './components/Newsletter.tsx';
 import Footer from './components/Footer.tsx';
@@ -19,10 +21,13 @@ const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero onOpenPreview={() => setIsPreviewOpen(true)} />
+        <BenefitSection />
         <FeatureSection />
         <GallerySection />
         <VideoSection />
         <Testimonials />
+        <AuthorSection />
+        <PurchaseCTA />
         <FAQ />
         <Newsletter />
       </main>
